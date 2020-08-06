@@ -11,6 +11,7 @@ header {
     justify-content: flex-start;
     align-items: stretch;
     align-content: flex-start;
+    z-index: 2;
 }
 
 header h1 {
@@ -28,6 +29,7 @@ header a {
 #main-nav {
     background-color: lightgray;
     flex-grow: 1;
+    z-index: 2;
 }
 
 #main-nav ul {
@@ -67,6 +69,7 @@ li a.active {
     width: 200px;
     background-color: lightgray;
     overflow-y: auto;
+    z-index: 2;
 }
 
 .sidenav ul {
@@ -85,6 +88,20 @@ li a.active {
 
 .main {
     position: relative;
+    padding: 30px 30px;
     left: 200px;
     top: 100px;
+    max-width: calc(100% - 260px);
 }
+
+#home-content {
+    position: relative;
+    top: 100px;
+    left: 0px;
+    background-image: url(./images/Star_Wars_Logo.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-top: 57%; /* (img-height / img-width * width) */
+    /* (853 / 1280 * 100) */
+}
+  
