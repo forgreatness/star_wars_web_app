@@ -1,21 +1,8 @@
 # Star Wars Web App
 
-**Assignment due at 11:59pm on Monday, 2/3/2020**<br>
-**Grading demo due by 11:59pm on Monday 3/2/2020**
+The purpose of the app is to use React Router to create a multi-page application based on client side routing. The application will serve users information about Star Wars categorized into groups of Characters, Planets, and Film evolving around the subject.
 
 The goal of this assignment is to use React Router to create a moderately complex, multi-page application based on simulated application data.
-
-Here, you're provided with code for an application initially created using Create React App and then pared down somewhat to eliminate some clutter that's not relevant to the assignment.  All of the normal Create React App workflows will work as expected.  For example, you can launch the development server by running `npm start`.
-
-In addition to the application code, there's also a directory of simulated application data in `src/data/`.  This data is derived from the [Star Wars API](https://swapi.co/) and represents typical data you might build a web application around.  The data is in JSON format (which can be directly `import`ed via Webpack) and is split into three different categories:
-  * People (`people.json`)
-  * Planets (`planets.json`)
-  * Films (`films.json`)
-
-Each of the data files has the same overall structure, though the individual data elements in each file contains slightly different fields that are relevant to the specific kind of data.  For example, elements in `people.json` have fields like `name`, `height`, `mass`, etc., while elements in `films.json` have fields like `title`, `opening_crawl`, `director`, etc.  Take a minute to familiarize yourself with the format of each kind of data element because you will have to implement components to display each kind of data.
-
-Your job for this assignment is to develop an app that lets you explore this data.  The app will have three main "pages", one for each kind of data.  On each of these pages, the user will be able to select one specific item from the corresponding collection of data to see more details about that item.  Below is a simple mock that demonstrates very roughly what the app might look like:
-
 ![Application mock](app-mock.jpg)
 
 The application you write should contain three main structural elements, each of which is described below.  Importantly, you must use React Router to implement the application's navigational features.
@@ -52,15 +39,13 @@ In addition, you should implement a very basic 404 page to handle any URLs that 
 
 You will need to write CSS to implement some of the features described above.  However, beyond the very broad description above, there are no strict requirements about how the application should be styled.  You can use the application mock above as inspiration, but there's no need to closely match its styling.  In general, don't worry about implementing a highly polished application in terms of styling.  In other words, your application can be minimally styled, as long as it satisfies the requirements described above.
 
-## Assignment submission
+## Project Demo
+<div float="left">
+    <img title="Main Layout" src="./demo_images/main.png" width="800" height="597"/>
+</div>
 
-We'll be using GitHub Classroom for this assignment, and you will submit your assignment via GitHub.  Just make sure your completed files are committed and pushed by the assignment's deadline to the master branch of the GitHub repo that was created for you by GitHub Classroom.  A good way to check whether your files are safely submitted is to look at the master branch your assignment repo on the github.com website (i.e. https://github.com/osu-cs419-w20/assignment-2-YourGitHubUsername/). If your changes show up there, you can consider your files submitted.
+Or go to https://forgreatness.github.io/star_wars_web_app to visit the app hosted by git pages.  
 
-## Assignment grading
+## Authors
 
-This assignment is worth 10 points total.
-
-Remember that in this course, programming assignments will be graded based on effort instead of correctness, and you will get full credit for an assignment if it is submitted on time and is clearly the product of a determined effort to solve the problem.  Again, If you’re unable to solve the homework problem, make sure to submit all code you’ve written, and then describe in comments in the source code the following three things:
-  1. How you attempted to solve the problem.
-  2. Where you ran into trouble.
-  3. What options you think (conceptually) might lead to a working solution.
+* **Danh Nguyen** - *Initial work* - [forgreatness](https://github.com/forgreatness)
