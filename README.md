@@ -2,7 +2,6 @@
 
 The purpose of the app is to use React Router to create a multi-page application based on client side routing. The application will serve users information about Star Wars categorized into groups of Characters, Planets, and Film evolving around the subject.
 
-The goal of this assignment is to use React Router to create a moderately complex, multi-page application based on simulated application data.
 ![Application mock](app-mock.jpg)
 
 The application you write should contain three main structural elements, each of which is described below.  Importantly, you must use React Router to implement the application's navigational features.
