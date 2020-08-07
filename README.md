@@ -1,4 +1,4 @@
-# Assignment 2
+# Star Wars Web App
 
 **Assignment due at 11:59pm on Monday, 2/3/2020**<br>
 **Grading demo due by 11:59pm on Monday 3/2/2020**
