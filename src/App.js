@@ -14,6 +14,7 @@ import PeopleData from './data/people.json';
 import PlanetsData from './data/planets.json';
 import FilmsData from './data/films.json';
 
+const HOME_PATH = "/star_wars_web_app";
 
 function Home() {
   return (
@@ -27,15 +28,18 @@ function People() {
   const peopleLinks = [];
   const peopleRoutesMatcher = [];
 
+  console.log(url);
+  console.log(path);
+
   for (var person of Object.keys(PeopleData)) {
     peopleLinks.push(
       <li key={person}>
-        <NavLink to={PeopleData[person].url}>{PeopleData[person].name}</NavLink>
+        <NavLink to={`${url}/${person}`}>{PeopleData[person].name}</NavLink>
       </li>
     );
 
     peopleRoutesMatcher.push(
-      <Route path={PeopleData[person].url}>
+      <Route path={`${path}/${person}`}>
         <Person info={PeopleData[person]}/>
       </Route>
     )
@@ -52,7 +56,7 @@ function People() {
         <Switch>
           {[
             ...peopleRoutesMatcher,
-            <Route exact path={url}>
+            <Route exact path={path}>
               <p>Select one of the character on the side navigation to learn more about their background.</p>
             </Route>,
             <Route path="*">
@@ -71,7 +75,7 @@ function Person(props) {
 
   person.films.forEach(film => {
     filmsPresent.push(
-      <li><Link to={film}>{film}</Link></li>
+      <li><Link to={`${HOME_PATH}${film}`}>{HOME_PATH}{film}</Link></li>
     );
   });
 
@@ -103,12 +107,12 @@ function Planets() {
   for (var planet of Object.keys(PlanetsData)) {
     planetLinks.push(
       <li key={planet}>
-        <NavLink to={PlanetsData[planet].url}>{PlanetsData[planet].name}</NavLink>
+        <NavLink to={`${url}/${planet}`}>{PlanetsData[planet].name}</NavLink>
       </li>
     )
 
     planetRoutesMatcher.push(
-      <Route path={PlanetsData[planet].url}>
+      <Route path={`${path}/${planet}`}>
         <Planet info={PlanetsData[planet]} />
       </Route>
     )
@@ -126,7 +130,7 @@ function Planets() {
           {
             [
               ...planetRoutesMatcher,
-              <Route exact path={url}>
+              <Route exact path={path}>
                 <p>Select a planet from the side navigation to explore its location.</p>
               </Route>,
               <Route path="*">
@@ -150,7 +154,7 @@ function Planet(props) {
   planet.residents.forEach(resident => {
     planetResidents.push(
       <li>
-        <Link to={resident}>{resident}</Link>
+        <Link to={`${HOME_PATH}${resident}`}>{HOME_PATH}{resident}</Link>
       </li>
     );
   });
@@ -158,7 +162,7 @@ function Planet(props) {
   planet.films.forEach(film => {
     filmsPresent.push(
       <li>
-        <Link to={film}>{film}</Link>
+        <Link to={`${HOME_PATH}${film}`}>{HOME_PATH}{film}</Link>
       </li>
     );
   });
@@ -194,12 +198,12 @@ function Films() {
   for (var film of Object.keys(FilmsData)) {
     filmLinks.push(
       <li key={film}>
-        <NavLink to={FilmsData[film].url}>{FilmsData[film].title}</NavLink>
+        <NavLink to={`${url}/${film}`}>{FilmsData[film].title}</NavLink>
       </li>
     )
 
     filmRoutesMatcher.push(
-      <Route path={FilmsData[film].url}>
+      <Route path={`${url}/${film}`}>
         <Film info={FilmsData[film]} />
       </Route>
     );
@@ -217,7 +221,7 @@ function Films() {
           {
             [
               ...filmRoutesMatcher,
-              <Route exact path={url}>
+              <Route exact path={path}>
                 <p>Select a film from the side navigation to learn about its details.</p>
               </Route>,
               <Route path="*">
@@ -241,7 +245,7 @@ function Film(props) {
   film.characters.forEach(character => {
     people.push(
       <li>
-        <Link to={character}>{character}</Link>
+        <Link to={`${HOME_PATH}${character}`}>{HOME_PATH}{character}</Link>
       </li>
     );
   });
@@ -249,7 +253,7 @@ function Film(props) {
   film.planets.forEach(planet => {
     planets.push(
       <li>
-        <Link to={planet}>{planet}</Link>
+        <Link to={`${HOME_PATH}${planet}`}>{HOME_PATH}{planet}</Link>
       </li>
     );
   });
@@ -276,41 +280,41 @@ function Film(props) {
 
 function App() {
   return (
-    [
+    <React.Fragment>
       <header>
-        <h1><Link exact to="/">Star Wars</Link></h1>
+        <h1><Link exact to="/star_wars_web_app">Star Wars</Link></h1>
         <nav id="main-nav">
           <ul>
             <li>
-              <NavLink to="/people">People</NavLink>
+              <NavLink to="/star_wars_web_app/people">People</NavLink>
             </li>
             <li>
-              <NavLink to="/planets">Planets</NavLink>
+              <NavLink to="/star_wars_web_app/planets">Planets</NavLink>
             </li>
             <li>
-              <NavLink to="/films">Films</NavLink>
+              <NavLink to="/star_wars_web_app/films">Films</NavLink>
             </li>
           </ul>
         </nav>
-      </header>,
+      </header>
       <Switch>
-        <Route path="/people">
+        <Route path="/star_wars_web_app/people">
           <People />
         </Route>
-        <Route path="/planets">
+        <Route path="/star_wars_web_app/planets">
           <Planets />
         </Route>
-        <Route path="/films">
+        <Route path="/star_wars_web_app/films">
           <Films />
         </Route>
-        <Route exact path="/">
+        <Route exact path="/star_wars_web_app">
           <Home />
         </Route>
         <Route path="*">
           <div>404</div>
         </Route>
       </Switch>
-    ]
+    </React.Fragment>
   );
 }
 
