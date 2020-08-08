@@ -89,7 +89,7 @@ function Person(props) {
       <span><b>Eye Color:  </b>{person.eye_color}</span> <br />
       <span><b>Birth Year: </b>{person.birth_year}</span> <br />
       <span><b>Gender: </b>{person.gender}</span> <br />
-      <span><b>Home World: </b><Link to={person.homeworld}>{person.homeworld}</Link></span> <br />
+      <span><b>Home World: </b><Link to={`${HOME_PATH}${person.homeworld}`}>{HOME_PATH}{person.homeworld}</Link></span> <br />
       <b>Films:</b>
       <ul>
         {filmsPresent}
